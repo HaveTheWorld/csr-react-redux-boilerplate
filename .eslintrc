@@ -1,0 +1,46 @@
+{
+  "extends": ["airbnb", "prettier", "prettier/react", "plugin:flowtype/recommended"],
+  "plugins": ["prettier", "flowtype"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack/dev.webpack.config.js"
+      }
+    },
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
+  },
+  "rules": {
+    "prettier/prettier": 0,
+    "react/jsx-filename-extension": 0,
+    "flowtype/require-valid-file-annotation": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.js", "**/__tests__/**/*.js"],
+      "env": {
+        "jest": true
+      },
+      "plugins": ["jest"]
+    }
+  ]
+}
